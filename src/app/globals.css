@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-space-black: #050505;
+  --color-deep-blue: #0b1021;
+  --color-mars-red: #8c2111;
+  --color-mars-orange: #d14924;
+  --color-neon-cyan: #00f0ff;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a0a0a0;
+
+  --font-sans: var(--font-outfit), sans-serif;
+  --font-display: var(--font-space-grotesk), sans-serif;
+}
+
+@layer base {
+  html,
+  body {
+    @apply bg-space-black text-text-primary;
+    background-color: var(--color-space-black);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+    scroll-behavior: auto; /* Handled by Lenis */
+  }
+
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--color-space-black);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: var(--color-mars-red);
+    border-radius: 4px;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: var(--color-mars-orange);
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+
+  .cyan-glow {
+    box-shadow: 0 0 15px var(--color-neon-cyan), inset 0 0 10px var(--color-neon-cyan);
+  }
+
+  .mars-glow {
+    box-shadow: 0 0 20px var(--color-mars-orange), inset 0 0 15px var(--color-mars-red);
+  }
+}
